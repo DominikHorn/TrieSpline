@@ -9,7 +9,7 @@ int main() {
   // generate sequential dataset. Others appear to have the same issue
   std::vector<Data> dataset;
   dataset.reserve(1000);
-  for (size_t i = 0; i < dataset.size(); i++) dataset.push_back(i + 20000);
+  for (size_t i = 0; i < dataset.capacity(); i++) dataset.push_back(i + 20000);
 
   const Data min = *std::min_element(dataset.begin(), dataset.end());
   const Data max = *std::max_element(dataset.begin(), dataset.end());
